@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image} from 'react-native';
 
 
 export default class Splash extends Component{
     render(){
+
+        
+        
+        
         return (
-      <View style = {styles.wrapper}>
+       <View style = {styles.wrapper}>
         <View style = {styles.titlewrapper}>
-         <Text style = {styles.title}>
-           Swipes
-          </Text>
+         <Image source = {require('./images/logo.png')} style = {styles.logo}/>
           <Text style = {styles.subtitle}>
             UCLA
             </Text>
@@ -42,13 +44,19 @@ const styles = {
 
     subtitle:{
         color:'white',
-        fontSize: 20,
-        marginLeft: 90,
+        fontSize: 16,
+       
+       
     
     },
 
     titlewrapper:{
         flex:1,
         justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    logo:{
+        
     }
 }
