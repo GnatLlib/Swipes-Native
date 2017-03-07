@@ -22,19 +22,19 @@ export default class Splash extends Component{
             
             <View style = {styles.wrapper}>
             
-            <View style = {styles.titlewrapper}>
-                <TouchableHighlight onPress = {()=>this.navigate('login')}>
-                <Image source = {require('./images/logo.png')} style = {styles.logo}/>
-                </TouchableHighlight>
-                <Text style = {styles.subtitle}>
-                    UCLA
-                </Text>
+                <View style = {styles.titlewrapper}>
+                    
+                    <Image source = {require('./images/logo.png')} style = {styles.logo}/>
+                    <TouchableHighlight onPress = {()=>this.navigate('login')} activeOpacity={99} underlayColor={'#16a085'}>
+                    <Text style = {styles.subtitle}>
+                        Enter
+                    </Text>
+                    </TouchableHighlight>
+                    
+                </View>
+        
                 
-                
-            </View>
-      
-            
-            <Text> Powered by React Native </Text>
+                <Text> Powered by React Native </Text>
             
             </View>
             
@@ -60,10 +60,8 @@ const styles = {
 
     subtitle:{
         color:'white',
-        fontSize: 16,
-       
-       
-    
+        fontSize: 20,
+        marginLeft:10
     },
 
     titlewrapper:{

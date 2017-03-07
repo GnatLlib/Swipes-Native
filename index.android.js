@@ -14,6 +14,11 @@ import {
 } from 'react-native';
 import Splash from './components/splash.js';
 import Login from './components/login.js';
+import PostList from './components/postlist.js'
+
+
+ 
+
 export default class Project extends Component {
   
   constructor(){
@@ -26,7 +31,7 @@ export default class Project extends Component {
       return <Splash navigator={navigator} />
     }
 
-    else if(route.name==='login'){
+    else if(route.name=== 'login'){
       return <Login navigator={navigator}/>
     
     }
@@ -36,12 +41,15 @@ export default class Project extends Component {
   
   
   render() {
+    
     return (
+      /*
       <Navigator
         initialRoute={{name: 'splash'}}
         renderScene={this.renderScene}
         />
-    
+        */
+        <PostList/>
     );
   }
 }

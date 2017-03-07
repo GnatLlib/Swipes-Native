@@ -2,6 +2,18 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Image, TouchableOpacity, TextInput,Text} from 'react-native';
 
 export default class Login extends Component{
+     constructor(){
+        super()
+        
+        this.navigate = this.navigate.bind(this)
+    }
+
+    navigate(name){
+        this.props.navigator.push({
+            name
+        })
+    }
+    
     render(){
         return(
             <View style = {styles.container}>
@@ -13,7 +25,7 @@ export default class Login extends Component{
                     <TextInput returnKeyType = 'next' underlineColorAndroid='transparent'style= {styles.input}/>
                     <Text  style = {styles.label}> Enter your phone number: </Text>
                     <TextInput keyboardType = 'numeric' style= {styles.input}/>
-                    <TouchableOpacity style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.buttonContainer}  onPress = { () =>this.navigate('splash')}>
                         <Text style = {styles.buttonText}> JOIN</Text>
                     </TouchableOpacity>
                 </View>
