@@ -9,13 +9,39 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
-import Splash from './splash';
+import Splash from './components/splash.js';
+import Login from './components/login.js';
 export default class Project extends Component {
+  
+  constructor(){
+    super()
+    this.renderScene = this.renderScene.bind(this)
+  }
+  
+  renderScene(route, navigator){
+    if(route.name === 'splash'){
+      return <Splash navigator={navigator} />
+    }
+
+    else if(route.name==='login'){
+      return <Login navigator={navigator}/>
+    
+    }
+
+  }
+  
+  
+  
   render() {
     return (
-      <Splash/>
+      <Navigator
+        initialRoute={{name: 'splash'}}
+        renderScene={this.renderScene}
+        />
+    
     );
   }
 }
