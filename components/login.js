@@ -13,7 +13,7 @@ export default class Login extends Component{
             name
         })
     }
-    
+
     render(){
         return(
             <View style = {styles.container}>
@@ -25,7 +25,7 @@ export default class Login extends Component{
                     <TextInput returnKeyType = 'next' underlineColorAndroid='transparent'style= {styles.input}/>
                     <Text  style = {styles.label}> Enter your phone number: </Text>
                     <TextInput keyboardType = 'numeric' style= {styles.input}/>
-                    <TouchableOpacity style={styles.buttonContainer}  onPress = { () =>this.navigate('splash')}>
+                    <TouchableOpacity style={styles.buttonContainer}  onPress = { () =>this.navigate('homepage')}>
                         <Text style = {styles.buttonText}> JOIN</Text>
                     </TouchableOpacity>
                 </View>

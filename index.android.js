@@ -15,6 +15,8 @@ import {
 import Splash from './components/splash.js';
 import Login from './components/login.js';
 import PostList from './components/postlist.js'
+import HomePage from './components/homepage.js'
+
 
 
  
@@ -36,6 +38,16 @@ export default class Project extends Component {
     
     }
 
+    else if(route.name=== 'postlist'){
+      return <PostList navigator={navigator}/>
+    
+    }
+
+    else if(route.name=== 'homepage'){
+      return <HomePage navigator={navigator}/>
+
+    }
+
   }
   
   
@@ -43,13 +55,13 @@ export default class Project extends Component {
   render() {
     
     return (
-      /*
+      
       <Navigator
         initialRoute={{name: 'splash'}}
         renderScene={this.renderScene}
         />
-        */
-        <PostList/>
+        
+        
     );
   }
 }

@@ -11,15 +11,22 @@ export default class PostList extends Component{
             posts: [],
             sellerName: []
         }
+
+        this.navigate = this.navigate.bind(this)
     }
 
-    
+    navigate(name){
+        this.props.navigator.push({
+            name
+        })
+    }
+
     componentWillMount(){
         
         getAllPosts().then((res) =>{
             this.setState({
                 posts: res,
-                sellerName: res[0].seller_name
+                sellerName: res[0].seller_name + ' ' + res[0].id
             })
         });
     }
